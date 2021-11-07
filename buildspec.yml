@@ -16,10 +16,10 @@ phases:
     commands:
       - mvn package
       - mkdir artifact  
-      - unzip target/my.war -d artifact/    
+      - unzip Hello.war -d artifact/    
 artifacts:
   files:
-    - target/my.war
+    - Hello.war
 cache:
     paths:
         - '/root/.m2/**/*'
