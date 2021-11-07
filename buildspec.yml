@@ -16,8 +16,10 @@ phases:
       - mkdir artifact  
       - unzip target/Hello.war -d artifact/
       - mv artifact/WEB-INF WEB-INF
+      - mv artifact/index.jsp index.jsp
 artifacts:
   files:
     - WEB-INF/**/*
+    - index.jsp
 
         
