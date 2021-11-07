@@ -10,11 +10,20 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn compile
       - cp target/Hello.war Hello.war
   post_build:
     commands:
-      - echo Build completed on `date`
+      - mvn package
+      - mkdir artifact  
+      - unzip target/my.war -d artifact/    
 artifacts:
   files:
-    - Hello.war
+    - artifact/**/*
+    name: artifact
+cache:
+    paths:
+        - '/root/.m2/**/*'
+
+  
+        
