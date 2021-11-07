@@ -19,8 +19,7 @@ phases:
       - unzip target/my.war -d artifact/    
 artifacts:
   files:
-    - artifact/**/*
-    name: artifact
+    - target/my.war
 cache:
     paths:
         - '/root/.m2/**/*'
