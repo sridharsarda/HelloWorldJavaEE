@@ -9,20 +9,15 @@ phases:
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
-      - echo Build started on `date`
-      - mvn compile
-      - cp target/Hello.war Hello.war
+      - mvn compile      
   post_build:
     commands:
       - mvn package
       - mkdir artifact  
-      - unzip Hello.war -d artifact/    
+      - unzip target/Hello.war -d artifact/
+      - mv artifact/WEB-INF WEB-INF
 artifacts:
   files:
-    - Hello.war
-cache:
-    paths:
-        - '/root/.m2/**/*'
+    - WEB-INF/**/*
 
-  
         
